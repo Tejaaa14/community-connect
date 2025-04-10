@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Connect - Issues Reporting Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-people-group"></i> Community Connect</h1>
+            <p>Report, Track, and Resolve Community Issues Together</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#" class="active" id="home-tab">Home</a></li>
+                <li><a href="#" id="report-tab">Report Issue</a></li>
+                <li><a href="#" id="my-reports-tab">My Reports</a></li>
+                <li><a href="#" id="about-tab">About</a></li>
+            </ul>
+            <div class="user-controls">
+                <button id="login-btn">Login</button>
+                <div class="user-profile hidden">
+                    <span id="user-name">User</span>
+                    <button id="logout-btn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home-section">
+            <div class="dashboard">
+                <div class="stats">
+                    <div class="stat-card">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>Total Reports</h3>
+                        <p id="total-reports">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Resolved</h3>
+                        <p id="resolved-reports">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>In Progress</h3>
+                        <p id="in-progress-reports">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>Pending</h3>
+                        <p id="pending-reports">0</p>
+                    </div>
+                </div>
+
+                <div class="filter-bar">
+                    <div class="search">
+                        <input type="text" id="search-input" placeholder="Search issues...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filters">
+                        <select id="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="roads">Roads & Traffic</option>
+                            <option value="utilities">Utilities</option>
+                            <option value="sanitation">Sanitation</option>
+                            <option value="safety">Public Safety</option>
+                            <option value="others">Others</option>
+                        </select>
+                        <select id="status-filter">
+                            <option value="all">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="resolved">Resolved</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="issues-list" id="issues-container">
+                    <!-- Issues will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Issue Section -->
+        <section id="report-section" class="hidden">
+            <h2>Report a Community Issue</h2>
+            <form id="report-form">
+                <div class="form-group">
+                    <label for="issue-title">Issue Title</label>
+                    <input type="text" id="issue-title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="issue-category">Category</label>
+                    <select id="issue-category" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="roads">Roads & Traffic</option>
+                        <option value="utilities">Utilities</option>
+                        <option value="sanitation">Sanitation</option>
+                        <option value="safety">Public Safety</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="issue-location">Location</label>
+                    <input type="text" id="issue-location" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="issue-description">Description</label>
+                    <textarea id="issue-description" name="description" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="issue-photo">Upload Photo (Optional)</label>
+                    <input type="file" id="issue-photo" name="photo" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label>Priority</label>
+                    <div class="priority-options">
+                        <label><input type="radio" name="priority" value="low"> Low</label>
+                        <label><input type="radio" name="priority" value="medium" checked> Medium</label>
+                        <label><input type="radio" name="priority" value="high"> High</label>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Submit Report</button>
+            </form>
+        </section>
+
+        <!-- My Reports Section -->
+        <section id="my-reports-section" class="hidden">
+            <h2>My Reports</h2>
+            <div class="my-issues-list" id="my-issues-container">
+                <!-- User's reported issues will be populated here -->
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="hidden">
+            <h2>About Community Connect</h2>
+            <div class="about-content">
+                <p>Community Connect is a platform designed to empower residents to report and track local issues in their neighborhood. Our mission is to facilitate better communication between community members and local authorities to create better living environments.</p>
+                
+                <h3>How It Works</h3>
+                <div class="how-it-works">
+                    <div class="step">
+                        <div class="step-icon"><i class="fas fa-clipboard"></i></div>
+                        <h4>Step 1: Report an Issue</h4>
+                        <p>Submit details about the problem you've noticed in your community.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fas fa-eye"></i></div>
+                        <h4>Step 2: Community Verification</h4>
+                        <p>Other community members can verify and add comments to your report.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                        <h4>Step 3: Resolution Process</h4>
+                        <p>Responsible authorities review and address the reported issues.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                        <h4>Step 4: Problem Solved</h4>
+                        <p>Issues are resolved and communities are improved.</p>
+                    </div>
+                </div>
+                
+                <h3>Contact Us</h3>
+                <p>If you have any questions or suggestions, please contact us at:</p>
+                <p><i class="fas fa-envelope"></i> support@communityconnect.org</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="reg-name">Full Name</label>
+                    <input type="text" id="reg-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-confirm-password">Confirm Password</label>
+                    <input type="password" id="reg-confirm-password" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+    </div>
+
+    <!-- Issue Detail Modal -->
+    <div id="issue-detail-modal" class="modal">
+        <div class="modal-content issue-detail-content">
+            <span class="close">&times;</span>
+            <div id="issue-detail-container">
+                <!-- Issue details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Community Connect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
