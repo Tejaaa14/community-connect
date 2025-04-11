@@ -35,9 +35,7 @@ To run the project locally:
 
 > For best experience, use [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in VS Code.
 
-## 📷 Screenshots
 
-## 📷 Screenshots
 
 ### Dashboard
 ![Dashboard](assets/dashboard.png)
