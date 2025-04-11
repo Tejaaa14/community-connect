@@ -37,7 +37,17 @@ To run the project locally:
 
 ## 📷 Screenshots
 
-_Add screenshots here if you'd like_
+## 📷 Screenshots
+
+### Dashboard
+![Dashboard](assets/dashboard.png)
+
+### Report Issue Form
+![Report Form](assets/report-form.png)
+
+### My Reports Section
+![My Reports](assets/my-reports.png)
+
 
 ## 📂 Project Structure
 
