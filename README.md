@@ -53,3 +53,9 @@ To run the project locally:
 index.html       # Main HTML structure
 styles.css       # Styling and responsive design
 script.js        # Functionality and logic (issues, filters, auth)
+---
+## 🙋‍♂️ Connect with Me
+
+- GitHub: [github.com/BERAN TEJA](https://github.com/Tejaaa14)
+- LinkedIn: [linkedin.com/in/Beran Teja Kolluri](https://linkedin.com/in/beran-teja-kolluri-93271b336/)
+
